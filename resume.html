@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رزومه من</title>
+    <style>
+        /* تنظیم رنگ‌ها */
+        :root {
+            --navy-900: #1c4f63; /* رنگ جدید هدر و فوتر */
+            --yellow-400: #f9c74f;
+            --beige-light: #f5f5f0;
+        }
+
+        /* استایل‌های عمومی */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f0; /* بژ روشن */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1, h2, h3 {
+            color: var(--navy-900);
+        }
+
+        /* نوار ناوبری */
+        nav {
+            background-color: var(--navy-900);
+            padding: 1rem 2rem;
+            text-align: left;
+            display: flex;
+            justify-content: left;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: var(--yellow-400);
+        }
+
+        /* سرصفحه */
+        header {
+            background-color: var(--navy-900);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* بخش درباره من */
+        section.bg-beige-light {
+            background-color: var(--beige-light);
+            padding: 4rem 1rem;
+        }
+
+        section.bg-beige-light h2 {
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        section.bg-beige-light p {
+            text-align: center;
+            color: #4a4a4a;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        /* بخش تاریخچه شغلی */
+        section.py-10 {
+            padding: 4rem 0;
+        }
+
+        .job-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .job-card {
+            background-color: var(--beige-light);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            flex-shrink: 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .job-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .job-card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--navy-900);
+        }
+
+        .job-card p {
+            margin-top: 1rem;
+            color: #666;
+        }
+
+        .job-card ul {
+            margin-top: 1rem;
+            padding-left: 20px;
+        }
+
+        .job-card ul li {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* مرکز چین کردن متن تاریخچه شغلی */
+        .job-header {
+            text-align: center; /* متن تاریخچه شغلی در وسط صفحه */
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--navy-900);
+            margin-bottom: 2rem;
+        }
+
+        /* بخش اطلاعات شخصی */
+        section.personal-info {
+            background-color: var(--beige-light);
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        section.personal-info h2 {
+            font-size: 2rem;
+        }
+
+        section.personal-info p {
+            color: #4a4a4a;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        /* بخش مهارت‌ها */
+        section.skills {
+            padding: 4rem 1rem;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        section.skills h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        section.skills ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        section.skills ul li {
+            background-color: var(--navy-900);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+        }
+
+        /* بخش تحصیلات */
+        section.education {
+            background-color: var(--beige-light);
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        section.education h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        section.education p {
+            color: #4a4a4a;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        /* بخش تماس */
+        section.bg-navy-900 {
+            background-color: var(--navy-900);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        section.bg-navy-900 a {
+            color: var(--yellow-400);
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        section.bg-navy-900 a:hover {
+            color: #f7e04e; /* زرد روشن‌تر */
+        }
+
+        /* فوتر */
+        footer {
+            background-color: var(--navy-900);
+            color: white;
+            text-align: center;
+            padding: 1rem 1rem;
+        }
+
+        footer .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.rem;
+        }
+
+        footer .social-links a:hover {
+            color: var(--yellow-400);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- نوار ناوبری -->
+<nav>
+        <a href="index.html">خانه</a>
+        <a href="projects.html">پروژه‌ها</a>
+        <a href="contact.html">تماس</a>
+        
+    </nav>
+
+    <!-- سرصفحه -->
+<header>
+      <header>
+    <h1 style="color: white;">مائده جرفی</h1> 
+    <!-- 🔧 تغییر شماره 1: افزودن استایل "color: white;" برای سفید کردن متن -->
+    <p>مهندس کامپیوتر | طراحی وب</p>
+</header>
+
+</header>
+
+    <!-- درباره من -->
+    <section class="bg-beige-light">
+      <div class="container">
+        <h2>درباره من</h2>
+          <p>من هنرجوی رشته کامپیوتر با تمرکز بر توسعه نرم‌افزار و طراحی وب هستم. طی سال‌های گذشته، با حضور فعال در پروژه‌های گوناگون، توانسته‌ام دانش خود را در زمینه‌های مختلف فناوری اطلاعات گسترش داده و به مهارت‌هایی عملی و کارآمد دست یابم.<br data-start="464" data-end="467">
+رویکرد من در انجام پروژه‌ها مبتنی بر دقت، تعهد و نوآوری است و همواره در پی یادگیری مستمر و ارتقاء توانمندی‌های فنی و تحلیلی خود هستم. باور دارم که ترکیب دانش تخصصی با اخلاق حرفه‌ای، مسیر دستیابی به نتایج مؤثر و پایدار را هموار می‌سازد.</p>
+        </div>
+    </section>
+
+    <!-- تاریخچه شغلی -->
+    <section class="py-10">
+        <div class="container">
+            <div class="job-header">تاریخچه شغلی</div>
+            <div class="job-container">
+              <div class="job-card">
+                <h3>توسعه‌دهنده وب                </h3>
+                <ul>
+                  <li>طراحی و توسعه صفحات وب پویا با استفاده از HTML, CSS, JavaScript.</li>
+                        <li>اجرای بهینه‌سازی‌های لازم برای بهبود سرعت وب‌سایت.</li>
+                </ul>
+              </div>
+              <div class="job-card">
+                <h3>دستیار توسعه وب                    </h3>
+                  <ul>
+                    <li>کمک به تیم در طراحی و پیاده‌سازی صفحات وب.</li>
+                      <li>کار با مشتریان برای درک نیازهای پروژه.</li>
+                        <li>انجام پروژه های گوناگون</li>
+                </ul>
+              </div>
+              <div class="job-card">
+                <h3>پشتیبانی از سایت</h3>
+                  <ul>
+                    <li>پشتیبانی از سایت ها در بروزرسانی و رفع باگ </li>
+                      <li>اشکال زدایی سایت ها </li>
+                      <li>تغییرات بر روی سایت ها</li>
+                </ul>
+              </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- اطلاعات شخصی -->
+    <section class="personal-info">
+        <h2>اطلاعات شخصی</h2>
+        <p>نام: مائده جرفی</p>
+        <p>تاریخ تولد: 1386</p>
+        <p>ایمیل: maedejorfi07@gmail.com</p>
+        <p>شماره تلفن: 09375035886</p>
+    </section>
+
+    <!-- مهارت‌ها -->
+    <section class="skills">
+        <h2>مهارت‌ها</h2>
+        <ul>
+            <li>برنامه نویسی با wordpress و زبان های برنامه نویسی html و php و javascript</li>
+            <li>طراحی و توسعه وب</li>
+            <li>مدیریت پایگاه داده‌های SQL</li>
+            <li>حل مسائل پیچیده فنی</li>
+        </ul>
+    </section>
+
+    <!-- تحصیلات -->
+<section class="education">
+  <h2>تحصیلات</h2>
+        <p>شبکه و نرم افزار فنی حرفه ای |هنرستان فنی حرفه ای هدف| 1401–1404    </p>
+</section>
+
+    <!-- تماس --><!-- فوتر -->
+<footer>
+        <p>&copy; 2025 مائده جرفی| تمام حقوق محفوظ است</p>
+</footer>
+
+</body>
+</html>
